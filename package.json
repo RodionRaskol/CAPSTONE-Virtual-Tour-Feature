@@ -1,0 +1,21 @@
+{
+  "name": "virtual-tour-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Evan Nietes",
+  "license": "ISC",
+  "dependencies": {
+    "@photo-sphere-viewer/core": "^5.10.1",
+    "@photo-sphere-viewer/markers-plugin": "^5.11.1",
+    "@photo-sphere-viewer/virtual-tour-plugin": "^5.11.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.9"
+  }
+}

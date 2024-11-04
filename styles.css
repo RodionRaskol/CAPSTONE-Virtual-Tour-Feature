@@ -1,0 +1,149 @@
+/* =============================
+      Navigation Arrows Removal 
+   ============================= */
+
+   .psv-virtual-tour-arrows {
+    display: none !important;
+  }
+
+
+/* ===================================
+      Markers CSS styles START HERE!!! 
+   =================================== */
+
+/* Universal styles for all circle markers */
+.circle-marker {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* ==========================
+   Marker 1: Simple Pulse Effect 
+   ========================== */
+
+.circle-marker.pulse-marker1 {
+    animation: pulseMarker1 1.5s infinite;
+    border: 7px solid white;
+}
+
+.circle-marker.pulse-marker1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative; /* Ensures the image is static and on top */
+    z-index: 1;
+}
+
+/* Hover effect for Marker 1 */
+.circle-marker.pulse-marker1:hover {
+    transform: scale(1.2); /* Expands marker on hover */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Keyframes for Marker 1 pulse animation */
+@keyframes pulseMarker1 {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================
+   Marker 2: Ripple Effect Wrapping Around the Image
+   ========================== */
+
+.circle-marker.pulse-marker2 {
+    position: relative;
+    width: 100px; /* Adjusted base size for larger pulse effect */
+    height: 100px;
+}
+
+.circle-marker.pulse-marker2 img {
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2; /* Ensures the image is above the ripple effect */
+}
+
+/* Hover effect for Marker 2 */
+.circle-marker.pulse-marker2:hover {
+    transform: scale(1.15); /* Slightly larger hover effect */
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+/* Container for ripple layers */
+.circle-marker.pulse-marker2 .pulse-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%; /* Ripple container slightly larger than image */
+    height: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensures it stays behind the image */
+}
+
+/* Pulse layers for the ripple effect */
+.pulse-container .pulse1,
+.pulse-container .pulse2,
+.pulse-container .pulse3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(rgb(2, 255, 78), rgb(70, 94, 233), rgb(191, 146, 250) );
+    animation: pulse 3s infinite;
+}
+
+/* Delayed start for ripple layers */
+.pulse-container .pulse2 {  
+    animation-delay: 1s;
+}
+
+.pulse-container .pulse3 {
+    animation-delay: 2s;
+}
+
+/* Keyframes for ripple pulse animation */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ==========================
+   Marker 3: Simple Expanding Pulse
+   ========================== */
+
+.circle-marker.pulse-marker3 {
+    animation: pulseMarker3 2s infinite;
+    border: 5px solid white;
+}
+
+.circle-marker.pulse-marker3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover effect for Marker 3 */
+.circle-marker.pulse-marker3:hover {
+    transform: scale(1.25); /* Slightly larger scale on hover */
+    box-shadow: 0 0 12px rgba(0, 128, 255, 0.5);
+}
+
+/* Keyframes for Marker 3 pulse animation */
+@keyframes pulseMarker3 {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
